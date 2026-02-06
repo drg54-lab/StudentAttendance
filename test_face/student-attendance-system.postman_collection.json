@@ -1,0 +1,405 @@
+{
+	"info": {
+		"_postman_id": "d5d63881-40aa-4467-9f70-7f8d87168f43",
+		"name": "student-attendance-system",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "36352878"
+	},
+	"item": [
+		{
+			"name": "authentication",
+			"item": [
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"amitab@gmail.com\",\r\n  \"password\": \"Test1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{local}}/api/auth/login/"
+					},
+					"response": []
+				},
+				{
+					"name": "Register user with face",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiM2U1MzU4ZGMtZWQ0OS00ODg3LWJhMmEtNTE2NjQyNDBiZjY3IiwiZW1haWwiOiJhbWl0YWJAZ21haWwuY29tIiwicm9sZSI6ImhvZCIsImV4cCI6MTc3MDI5NjY5NSwianRpIjoiOTExNWM3MzktNWY0ZC00MjVjLTkxZTMtYjFkM2U1MmQzNzFiIiwiaWF0IjoxNzcwMjkzMDk1fQ.d0owcY8XaSMyH1YKU1nFVdBBH2HdNfLQS6IVPXcJUN8"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "fullname",
+									"value": "Naymar",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "naymar@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "Test1234",
+									"type": "text"
+								},
+								{
+									"key": "role",
+									"value": "teacher",
+									"type": "text"
+								},
+								{
+									"key": "phone",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "dob",
+									"value": "2000-02-01",
+									"type": "text"
+								},
+								{
+									"key": "gender",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "address",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "department",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "face_image",
+									"type": "file",
+									"src": "/C:/Users/ADMIN/Downloads/n.jpg"
+								}
+							]
+						},
+						"url": "{{local}}/api/user/register/"
+					},
+					"response": []
+				},
+				{
+					"name": "update profile",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "naymar@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "full_name",
+									"value": "Naymar",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "Test1234",
+									"type": "text"
+								},
+								{
+									"key": "role",
+									"value": "teacher",
+									"type": "text"
+								},
+								{
+									"key": "phone",
+									"value": "+918172048856",
+									"type": "text"
+								},
+								{
+									"key": "department",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "face_photo",
+									"type": "file",
+									"src": "/C:/Users/ADMIN/Downloads/n.jpg"
+								}
+							]
+						},
+						"url": ""
+					},
+					"response": []
+				},
+				{
+					"name": "get my attendance history",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiMzExYWMyZTctMGI5OS00ODIzLWI4MGYtMzRmMDQ0MDk5YzFjIiwiZW1haWwiOiJtZXNzaUBnbWFpbC5jb20iLCJyb2xlIjoidGVhY2hlciIsImZ1bGxfbmFtZSI6Ik1lc3NpIEdob3NoIiwiZXhwIjoxNzY5NTA5ODkzfQ.s6kM3835FYlzR0Cx2nHkejF39GHND8xve8dG2wuG4hM"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "{{local}}/api/user/get_my_attendance_history/"
+					},
+					"response": []
+				},
+				{
+					"name": "self attendance",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiM2U1MzU4ZGMtZWQ0OS00ODg3LWJhMmEtNTE2NjQyNDBiZjY3IiwiZW1haWwiOiJhbWl0YWJAZ21haWwuY29tIiwicm9sZSI6ImhvZCIsImV4cCI6MTc3MDIzMTU5NSwianRpIjoiYjYwOGNkMDEtZGFkYi00M2NkLTljMzMtMmY1MjQ1ODFjYjE3IiwiaWF0IjoxNzcwMjI3OTk1fQ.JCFkXZ_fAKThYZe5NZJUo1mQ216vlzlHQqD9idkXc2Q"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "face_image",
+									"type": "file",
+									"src": "/D:/DRG/Projects/AttendanceSystem/test_face/amitab/t_amitab.jpg"
+								}
+							]
+						},
+						"url": "{{local}}/api/auth/self-attendance/"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Teacher Dashboard",
+			"item": [
+				{
+					"name": "Get Attendance session",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNDdmZTQ4MDAtNjg2Yy00NTBhLTk3YzAtMzUyNTY2YTRjODE1IiwiZW1haWwiOiJtZXNzaUBnbWFpbC5jb20iLCJyb2xlIjoidGVhY2hlciIsImZ1bGxfbmFtZSI6Ik1lc3NpIiwiZXhwIjoxNzY5MDgxMzQzfQ.vubRas3IhYjF3idexqu4oI4Oa4d5tmdLc-5EY3uddtk"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Admin or Hod",
+			"item": [
+				{
+					"name": "User List",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiM2U1MzU4ZGMtZWQ0OS00ODg3LWJhMmEtNTE2NjQyNDBiZjY3IiwiZW1haWwiOiJhbWl0YWJAZ21haWwuY29tIiwicm9sZSI6ImhvZCIsImV4cCI6MTc3MDI5NjY5NSwianRpIjoiOTExNWM3MzktNWY0ZC00MjVjLTkxZTMtYjFkM2U1MmQzNzFiIiwiaWF0IjoxNzcwMjkzMDk1fQ.d0owcY8XaSMyH1YKU1nFVdBBH2HdNfLQS6IVPXcJUN8"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "{{local}}/api/user/list/"
+					},
+					"response": []
+				},
+				{
+					"name": "Student List",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiM2U1MzU4ZGMtZWQ0OS00ODg3LWJhMmEtNTE2NjQyNDBiZjY3IiwiZW1haWwiOiJhbWl0YWJAZ21haWwuY29tIiwicm9sZSI6ImhvZCIsImV4cCI6MTc3MDIzMTU5NSwianRpIjoiYjYwOGNkMDEtZGFkYi00M2NkLTljMzMtMmY1MjQ1ODFjYjE3IiwiaWF0IjoxNzcwMjI3OTk1fQ.JCFkXZ_fAKThYZe5NZJUo1mQ216vlzlHQqD9idkXc2Q"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{local}}/api/student/list/?academic_year=2026",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"api",
+								"student",
+								"list",
+								""
+							],
+							"query": [
+								{
+									"key": "academic_year",
+									"value": "2026"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Student Details",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Register University or Organization",
+					"request": {
+						"method": "POST",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Add School or Company",
+					"request": {
+						"method": "POST",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Add Class",
+					"request": {
+						"method": "POST",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Register Student with face",
+					"request": {
+						"method": "POST",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Attendance Session",
+			"item": [
+				{
+					"name": "Attendance Session",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiM2U1MzU4ZGMtZWQ0OS00ODg3LWJhMmEtNTE2NjQyNDBiZjY3IiwiZW1haWwiOiJhbWl0YWJAZ21haWwuY29tIiwicm9sZSI6ImhvZCIsImV4cCI6MTc3MDMwODk0NCwianRpIjoiYjgxZWJjNmMtYTk5ZS00OGY1LWE0NzctMGNiNDU1ODA2Mzc0IiwiaWF0IjoxNzcwMzA1MzQ0fQ.vap3Sx4rWGkmdyuhYb4tbqZ880O7Z5yufvfE4OjZy5E"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "class_id",
+									"value": "eae9bc1a-0a98-47d8-9343-caed42aee0ba",
+									"type": "text"
+								},
+								{
+									"key": "capture_image",
+									"type": "file",
+									"src": "/D:/DRG/Projects/AttendanceSystem/test_face/group_max.jpeg"
+								}
+							]
+						},
+						"url": "{{local}}/api/attendance/session/create_session/"
+					},
+					"response": []
+				},
+				{
+					"name": "End session(complete capture)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiM2U1MzU4ZGMtZWQ0OS00ODg3LWJhMmEtNTE2NjQyNDBiZjY3IiwiZW1haWwiOiJhbWl0YWJAZ21haWwuY29tIiwicm9sZSI6ImhvZCIsImV4cCI6MTc3MDMxMjY2NiwianRpIjoiM2YzNzE5ZGYtNWI1Yy00YjQ4LTllMmYtNGVkNjgxYmU2NzIyIiwiaWF0IjoxNzcwMzA5MDY2fQ.z421fyYLme_PWifozbnneMSxD72HC8GyCuQK8Ek6eFs"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"session_id\":\"d31b3c1a-bb90-46ee-ab24-8381cc290669\",\r\n    \"students\": [\r\n        {\r\n            \"student_id\": \"fc711806-c45f-4f1a-828c-77ce95b26127\",\r\n            \"roll_number\": \"Max001\",\r\n            \"full_name\": \"Ankon Da\",\r\n            \"attendance_status\": \"present\",\r\n            \"confidence\": 60.05,\r\n            \"is_face_detected\": true,\r\n            \"has_face_data\": true\r\n        },\r\n        {\r\n            \"student_id\": \"e1218c37-2d7f-4111-8378-df3bf4ed88c4\",\r\n            \"roll_number\": \"Max002\",\r\n            \"full_name\": \"debjit Da\",\r\n            \"attendance_status\": \"present\",\r\n            \"confidence\": 41.67,\r\n            \"is_face_detected\": true,\r\n            \"has_face_data\": true\r\n        },\r\n        {\r\n            \"student_id\": \"6aeefbbd-945a-46b7-ba68-f277b5bedc15\",\r\n            \"roll_number\": \"Max007\",\r\n            \"full_name\": \"utshab Da\",\r\n            \"attendance_status\": \"present\",\r\n            \"confidence\": 0.0,\r\n            \"is_face_detected\": false,\r\n            \"has_face_data\": true\r\n        },\r\n        {\r\n            \"student_id\": \"c862687c-8e18-4aa2-8102-79526e15ee32\",\r\n            \"roll_number\": \"Max010\",\r\n            \"full_name\": \"Netaji subhus\",\r\n            \"attendance_status\": \"present\",\r\n            \"confidence\": 50.17,\r\n            \"is_face_detected\": true,\r\n            \"has_face_data\": true\r\n        },\r\n        {\r\n            \"student_id\": \"684c6394-2173-4505-afe0-c1be6fc351a9\",\r\n            \"roll_number\": \"Max003\",\r\n            \"full_name\": \"kitty Da\",\r\n            \"attendance_status\": \"present\",\r\n            \"confidence\": 40.34,\r\n            \"is_face_detected\": true,\r\n            \"has_face_data\": true\r\n        },\r\n        {\r\n            \"student_id\": \"f6efcba6-57a1-4e3c-9f60-1795e0f1cbce\",\r\n            \"roll_number\": \"Max005\",\r\n            \"full_name\": \"songita Di\",\r\n            \"attendance_status\": \"present\",\r\n            \"confidence\": 58.27,\r\n            \"is_face_detected\": true,\r\n            \"has_face_data\": true\r\n        },\r\n        {\r\n            \"student_id\": \"2789dd4c-f796-4ecf-a000-a443cf655810\",\r\n            \"roll_number\": \"Max004\",\r\n            \"full_name\": \"soumo Da\",\r\n            \"attendance_status\": \"present\",\r\n            \"confidence\": 42.59,\r\n            \"is_face_detected\": true,\r\n            \"has_face_data\": true\r\n        },\r\n        {\r\n            \"student_id\": \"98b2a024-870c-401d-b7dc-bdc7d05c6308\",\r\n            \"roll_number\": \"Max008\",\r\n            \"full_name\": \"Priya Das\",\r\n            \"attendance_status\": \"present\",\r\n            \"confidence\": 44.13,\r\n            \"is_face_detected\": true,\r\n            \"has_face_data\": true\r\n        },\r\n        {\r\n            \"student_id\": \"e6e45b3d-4102-45a5-97e0-f2275580f962\",\r\n            \"roll_number\": \"Max009\",\r\n            \"full_name\": \"Niladri Sir\",\r\n            \"attendance_status\": \"present\",\r\n            \"confidence\": 47.95,\r\n            \"is_face_detected\": true,\r\n            \"has_face_data\": true\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{local}}/api/attendance/session/save_attendance/"
+					},
+					"response": []
+				},
+				{
+					"name": "End session(complete capture) Copy",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiM2U1MzU4ZGMtZWQ0OS00ODg3LWJhMmEtNTE2NjQyNDBiZjY3IiwiZW1haWwiOiJhbWl0YWJAZ21haWwuY29tIiwicm9sZSI6ImhvZCIsImV4cCI6MTc3MDMxMjY2NiwianRpIjoiM2YzNzE5ZGYtNWI1Yy00YjQ4LTllMmYtNGVkNjgxYmU2NzIyIiwiaWF0IjoxNzcwMzA5MDY2fQ.z421fyYLme_PWifozbnneMSxD72HC8GyCuQK8Ek6eFs"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{local}}/api/attendance/session/d31b3c1a-bb90-46ee-ab24-8381cc290669/"
+					},
+					"response": []
+				},
+				{
+					"name": "Get session History",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiM2U1MzU4ZGMtZWQ0OS00ODg3LWJhMmEtNTE2NjQyNDBiZjY3IiwiZW1haWwiOiJhbWl0YWJAZ21haWwuY29tIiwicm9sZSI6ImhvZCIsImV4cCI6MTc3MDMwODk0NCwianRpIjoiYjgxZWJjNmMtYTk5ZS00OGY1LWE0NzctMGNiNDU1ODA2Mzc0IiwiaWF0IjoxNzcwMzA1MzQ0fQ.vap3Sx4rWGkmdyuhYb4tbqZ880O7Z5yufvfE4OjZy5E"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "{{local}}/api/attendance/session/list"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

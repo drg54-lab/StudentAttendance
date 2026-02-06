@@ -1,0 +1,21 @@
+{
+    "register_face":[
+        "Frontal view - facing directly at camera", 
+        "Neutral expression - no smiling, frowning, or exaggerated expressions",
+        "Eyes open - both eyes clearly visible",
+        "No obstructions - no glasses, hats, masks, or hair covering face",
+        "Good lighting - even lighting, no shadows on face",
+        "No side profiles - must be frontal view",
+        "No group photos - single person only",
+        "No extreme angles - face should be upright",
+        "Maxdrg#54"
+        ],
+    "detect_face":[
+        "Minimum face size: 100x100 pixels in the image",
+        "Maximum faces: System can detect up to 50 faces per image",
+        "Confidence scoring: Returns confidence percentage (0-100%)",
+        "Multiple matches: Only the best match is considered"
+    ]
+
+    
+}
